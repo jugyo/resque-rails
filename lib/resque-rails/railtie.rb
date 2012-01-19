@@ -1,5 +1,7 @@
 module Resque::Rails
   class Railtie < Rails::Railtie
+    extend Rake::DSL
+
     initializer 'resque.set_config' do
       Resque.redis ||= 'localhost:6379'
     end
