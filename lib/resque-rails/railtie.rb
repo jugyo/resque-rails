@@ -1,6 +1,5 @@
 module Resque::Rails
   class Railtie < Rails::Railtie
-    extend Rake::DSL
 
     initializer 'resque.set_config' do
       Resque.redis ||= 'localhost:6379'
@@ -10,5 +9,7 @@ module Resque::Rails
       require 'resque/tasks'
       task "resque:setup" => :environment
     end
+
   end
 end
+
